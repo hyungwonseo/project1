@@ -49,4 +49,13 @@ public class BoardController {
                         boardService.deleteBoard(id)),
                 HttpStatus.OK);
     }
+
+    @GetMapping("api/board/id")
+    public ResponseEntity<BaseResponse<Void>> getTest(@RequestHeader("X-LoginID") String id) {
+        return new ResponseEntity<BaseResponse<Void>>(
+                new BaseResponse<Void>(ResultCode.SUCCESS.name(),
+                        null,
+                        id),
+                HttpStatus.OK);
+    }
 }
