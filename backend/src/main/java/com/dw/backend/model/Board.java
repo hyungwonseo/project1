@@ -16,17 +16,19 @@ public class Board {
     private String title;
     @Column(nullable = false, length = 1500)
     private String text;
+    @Column(nullable = false)
+    private String category;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false, updatable = false)
     private LocalDateTime createAt;
 
     public Board() {
     }
-
-    public Board(String author, String title, String text, LocalDateTime createAt) {
+    public Board(String author, String title, String text, String category, LocalDateTime createAt) {
         this.author = author;
         this.title = title;
         this.text = text;
+        this.category = category;
         this.createAt = createAt;
     }
 
@@ -60,6 +62,14 @@ public class Board {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public LocalDateTime getCreateAt() {

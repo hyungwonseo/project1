@@ -29,6 +29,7 @@ public class BoardService {
                 boardDto.getAuthor(),
                 boardDto.getTitle(),
                 boardDto.getText(),
+                boardDto.getCategory(),
                 LocalDateTime.now()
         );
         // 리포지토리 저장
